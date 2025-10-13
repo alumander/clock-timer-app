@@ -1,0 +1,4 @@
+# Stop Jekyll from crashing on known directories
+exclude:
+  - node_modules
+  - venv
