@@ -1,0 +1,2 @@
+# Ignore gh-pages cache
+node_modules/.cache/
