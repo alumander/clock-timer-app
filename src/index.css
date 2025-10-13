@@ -1,0 +1,147 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 350 80% 93%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 262 83% 76%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 262 83% 76%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262 83% 76%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 262 83% 76%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 262 83% 76%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 262 83% 76%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#C7B5D9] dark:bg-background text-foreground transition-colors duration-300;
+  }
+}
+
+.timer-circle {
+  @apply fixed top-4 right-4 z-40 flex items-center justify-center rounded-full bg-muted text-muted-foreground shadow-md dark:bg-gray-800 dark:text-white;
+
+  width: min(16vw, 6rem);
+  height: min(16vw, 6rem);
+}
+
+.timer-fullscreen {
+  @apply fixed inset-0 flex items-center justify-center bg-[#C7B5D9] dark:bg-background p-6 landscape:p-4;
+}
+
+.time-display {
+  @apply text-[min(15vw,12rem)] landscape:text-[min(28vh,24rem)] font-bold text-primary tracking-tight max-w-full whitespace-nowrap overflow-hidden text-ellipsis leading-none;
+}
+
+.small-time {
+  @apply text-base font-medium text-primary;
+}
+
+.small-period {
+  @apply text-sm font-medium text-primary;
+}
+
+.controls {
+  @apply flex gap-4 mt-8 landscape:mt-4 justify-center items-center;
+}
+
+.theme-toggle {
+  @apply fixed top-4 left-1/2 -translate-x-1/2 p-2 rounded-full bg-[#EBD9FF]/80 dark:bg-gray-800/80 backdrop-blur-lg shadow-lg transition-all duration-300 hover:scale-110 z-50;
+}
+
+.menu-button {
+  @apply fixed top-4 left-4 z-50 bg-[#EBD9FF]/80 dark:bg-gray-800/80 backdrop-blur-lg shadow-lg rounded-full;
+}
+
+.fullscreen-button {
+  @apply fixed bottom-4 left-4 z-50 bg-[#EBD9FF]/80 dark:bg-gray-800/80 backdrop-blur-lg shadow-lg rounded-full transition-all duration-300 hover:scale-110;
+}
+
+.settings-section {
+  @apply space-y-4 border-b border-border pb-4 last:border-0 last:pb-0;
+}
+
+.settings-title {
+  @apply text-lg font-semibold mb-4;
+}
+
+.settings-row {
+  @apply flex items-center justify-between py-2;
+}
+
+.settings-label {
+  @apply text-sm font-medium;
+}
+
+.content-container {
+  @apply w-full max-w-[80vw] landscape:max-w-[90vw] mx-auto px-4 flex flex-col items-center justify-center min-h-[60vh] landscape:min-h-[80vh];
+}
+
+.add-time-button {
+  @apply flex items-center justify-center gap-1 min-w-[4.5rem];
+}
+
+.sheet-content {
+  @apply overflow-y-auto max-h-[85vh] landscape:max-h-[80vh] pr-6;
+}
+
+@media (orientation: landscape) {
+  .timer-circle {
+    width: min(20vh, 10rem);
+    height: min(20vh, 10rem);
+  }
+
+  .small-time {
+    font-size: min(6vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .small-period {
+    font-size: min(5vw, 1.4rem);
+    font-weight: 500;
+    margin-top: 0.2em;
+    opacity: 0.85;
+  }
+}
