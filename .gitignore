@@ -1,2 +1,6 @@
-# Ignore gh-pages cache
-node_modules/.cache/
+# Virtual Environment
+venv/
+
+# Build and Dependencies
+dist/
+node_modules/
