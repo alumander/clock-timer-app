@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -a .nojekyll"
+    "predeploy": "npm run build && mkdir -p dist/.nojekyll_temp && cp -R dist/* dist/.nojekyll_temp/ && cp .nojekyll dist/.nojekyll_temp/ && rm -rf dist && mv dist/.nojekyll_temp dist", 
+    "deploy": "gh-pages -d dist" 
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.1",
