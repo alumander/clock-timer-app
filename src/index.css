@@ -60,10 +60,9 @@
 }
 
 .timer-circle {
-  @apply fixed top-4 right-4 z-40 flex flex-col items-center justify-center rounded-full bg-muted text-muted-foreground shadow-md dark:bg-gray-800 dark:text-white px-4 py-2;
+  @apply fixed top-0 right-0 z-40 flex flex-col items-center justify-center rounded-bl-2xl bg-muted text-muted-foreground shadow-md dark:bg-gray-800 dark:text-white;
 
-  min-width: 3.5rem;
-  min-height: 3.5rem;
+  padding: 0.75rem 1.25rem;
 }
 
 .timer-fullscreen {
@@ -76,12 +75,12 @@
 
 .small-time {
   @apply font-semibold text-primary whitespace-nowrap leading-none;
-  font-size: clamp(0.75rem, 2.6vmin, 1.15rem);
+  font-size: clamp(1.1rem, 5vmin, 2.5rem);
 }
 
 .small-period {
   @apply font-medium text-primary whitespace-nowrap leading-none;
-  font-size: clamp(0.6rem, 1.9vmin, 0.85rem);
+  font-size: clamp(0.75rem, 3vmin, 1.4rem);
   margin-top: 0.2em;
   opacity: 0.85;
 }
