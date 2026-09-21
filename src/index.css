@@ -62,7 +62,7 @@
 .timer-circle {
   @apply fixed top-0 right-0 z-40 flex flex-col items-center justify-center rounded-bl-2xl bg-muted text-muted-foreground shadow-md dark:bg-gray-800 dark:text-white;
 
-  padding: 0.75rem 1.25rem;
+  padding: 1.25rem 1.25rem 0.75rem;
 }
 
 .timer-fullscreen {
